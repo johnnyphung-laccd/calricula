@@ -1,6 +1,8 @@
 # Calricula - Intelligent Curriculum Management System
 
-An AI-assisted curriculum management platform for Los Angeles Mission College (LAMC) / LACCD that enables faculty to create, modify, and route Course Outlines of Record (CORs) and Programs through approval workflows.
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/johnnyphung-laccd/calricula)
+
+An AI-assisted curriculum management platform that enables faculty to create, modify, and route Course Outlines of Record (CORs) and Programs through approval workflows.
 
 ## Features
 
@@ -36,8 +38,8 @@ An AI-assisted curriculum management platform for Los Angeles Mission College (L
 
 ```bash
 # Clone the repository
-git clone <repository-url>
-cd calricula-app
+git clone https://github.com/johnnyphung-laccd/calricula.git
+cd calricula
 
 # Create environment file from template
 cp .env.example .env

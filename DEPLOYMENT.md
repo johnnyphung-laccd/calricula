@@ -43,8 +43,8 @@ sudo mkdir -p /opt/calricula
 sudo chown $USER:$USER /opt/calricula
 cd /opt/calricula
 
-# Clone your repository (or upload files)
-git clone https://github.com/YOUR_USERNAME/calricula.git .
+# Clone the repository
+git clone https://github.com/johnnyphung-laccd/calricula.git .
 # Or use scp/rsync to upload files
 ```
 
