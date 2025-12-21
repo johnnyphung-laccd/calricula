@@ -117,9 +117,9 @@ const StatCard: React.FC<StatCardProps> = ({
       <p className="text-lg font-semibold text-slate-900 dark:text-white">
         {value}
       </p>
-      <p className="text-xs text-slate-500 dark:text-slate-400">{label}</p>
+      <p className="text-xs text-slate-600 dark:text-slate-400">{label}</p>
       {subtext && (
-        <p className="text-xs text-slate-400 dark:text-slate-500">{subtext}</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">{subtext}</p>
       )}
     </div>
   </div>
@@ -148,10 +148,10 @@ const AnalyticsSkeleton: React.FC = () => (
 const EmptyState: React.FC = () => (
   <div className="text-center py-6">
     <ChartBarIcon className="h-10 w-10 mx-auto text-slate-300 dark:text-slate-600 mb-3" />
-    <p className="text-sm text-slate-500 dark:text-slate-400">
+    <p className="text-sm text-slate-600 dark:text-slate-400">
       No course data available yet.
     </p>
-    <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
+    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
       Start by creating some courses.
     </p>
   </div>

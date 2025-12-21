@@ -116,11 +116,11 @@ const NotificationItem: React.FC<NotificationItemProps> = ({
           {notification.message}
         </p>
         <div className="flex items-center gap-2 mt-1">
-          <span className="text-xs text-slate-400 dark:text-slate-500">
+          <span className="text-xs text-slate-500 dark:text-slate-400">
             {formatTimeAgo(notification.created_at)}
           </span>
           {notification.actor_name && (
-            <span className="text-xs text-slate-400 dark:text-slate-500">
+            <span className="text-xs text-slate-500 dark:text-slate-400">
               by {notification.actor_name}
             </span>
           )}
@@ -172,10 +172,10 @@ const NotificationsSkeleton: React.FC = () => (
 const EmptyState: React.FC = () => (
   <div className="text-center py-6">
     <CheckCircleIcon className="h-10 w-10 mx-auto text-slate-300 dark:text-slate-600 mb-3" />
-    <p className="text-sm text-slate-500 dark:text-slate-400">
+    <p className="text-sm text-slate-600 dark:text-slate-400">
       You're all caught up!
     </p>
-    <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
+    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
       No new notifications
     </p>
   </div>

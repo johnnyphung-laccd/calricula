@@ -97,7 +97,7 @@ const ApprovalItem: React.FC<ApprovalItemProps> = ({ item }) => {
         <p className="text-sm text-slate-500 dark:text-slate-400 truncate mt-0.5">
           {item.title}
         </p>
-        <div className="flex items-center gap-3 mt-1 text-xs text-slate-400 dark:text-slate-500">
+        <div className="flex items-center gap-3 mt-1 text-xs text-slate-500 dark:text-slate-400">
           {item.submitter && (
             <span className="flex items-center gap-1">
               <UserCircleIcon className="h-3 w-3" />
@@ -146,7 +146,7 @@ const ApprovalsSkeleton: React.FC = () => (
 const EmptyState: React.FC = () => (
   <div className="text-center py-6">
     <ClockIcon className="h-10 w-10 mx-auto text-slate-300 dark:text-slate-600 mb-3" />
-    <p className="text-sm text-slate-500 dark:text-slate-400">
+    <p className="text-sm text-slate-600 dark:text-slate-400">
       No items pending your review.
     </p>
   </div>

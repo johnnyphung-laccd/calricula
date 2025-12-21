@@ -60,7 +60,8 @@ function formatStatusLabel(status: string): string {
   return labels[status] || status;
 }
 
-function debounce<T extends (...args: unknown[]) => void>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function debounce<T extends (...args: any[]) => void>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -180,7 +181,7 @@ export const QuickSearchWidget: React.FC<QuickSearchWidgetProps> = ({
         id: program.id,
         type: 'program' as const,
         code: program.title,
-        title: `${program.type} - ${program.department_name || 'No department'}`,
+        title: `${program.type} - ${program.department?.name || 'No department'}`,
         status: program.status,
       }));
 

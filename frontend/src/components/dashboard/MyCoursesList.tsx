@@ -92,10 +92,10 @@ const CourseItem: React.FC<CourseItemProps> = ({ course }) => {
         </p>
       </div>
       <div className="flex-shrink-0 ml-4 text-right">
-        <p className="text-xs text-slate-400 dark:text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           Updated
         </p>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+        <p className="text-xs text-slate-600 dark:text-slate-400">
           {updatedDate}
         </p>
       </div>

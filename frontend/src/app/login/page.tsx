@@ -114,7 +114,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right Panel - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8 bg-slate-50 dark:bg-slate-900">
+      <main className="flex-1 flex items-center justify-center p-8 bg-slate-50 dark:bg-slate-900">
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden flex justify-center mb-8">
@@ -267,7 +267,7 @@ export default function LoginPage() {
           </div>
 
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -125,7 +125,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   });
 
   return (
-    <div className={`flex flex-col h-full ${mobile ? '' : 'luminous-sidebar'}`}>
+    <aside className={`flex flex-col h-full ${mobile ? '' : 'luminous-sidebar'}`} aria-label="Sidebar Navigation">
       {/* Logo Section */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10">
         <AcademicCapIcon className="h-8 w-8 text-white" />
@@ -193,7 +193,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           <span>Sign out</span>
         </button>
       </div>
-    </div>
+    </aside>
   );
 };
 

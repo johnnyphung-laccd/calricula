@@ -139,6 +139,21 @@ export default function HomePage() {
               <AcademicCapIcon className="h-8 w-8" />
               <span className="text-xl font-bold">Calricula</span>
             </div>
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-white/60">ACR:</span>
+              <Link
+                href="/accessibility/508"
+                className="text-white/80 hover:text-white transition-colors underline-offset-2 hover:underline"
+              >
+                Section 508
+              </Link>
+              <Link
+                href="/accessibility/wcag"
+                className="text-white/80 hover:text-white transition-colors underline-offset-2 hover:underline"
+              >
+                WCAG
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
