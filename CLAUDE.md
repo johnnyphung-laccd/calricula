@@ -27,6 +27,50 @@ Both applications share the same design system and authentication for a consiste
 - **Calricula:** PostgreSQL via Neon with SQLModel (strict relational data for courses, programs, requisites)
 - **Luminous:** PostgreSQL via Neon with SQLModel (uses JSONB for flexible template content)
 
+### Repository
+- **GitHub**: https://github.com/johnnyphung-laccd/calricula
+- **Production Domain**: calricula.com (Caddy reverse proxy with auto SSL)
+
+## Development Setup
+
+### Quick Start
+```bash
+# Start all services
+docker compose up -d
+
+# Access the application
+# Frontend: http://localhost:3001
+# Backend API: http://localhost:8001
+# API Docs: http://localhost:8001/docs
+```
+
+### Test Accounts (Dev Mode)
+
+Dev mode auth bypass is enabled via `AUTH_DEV_MODE=true` in `.env`. All test users use password: `Test123!`
+
+| Email | Role | Department | Demo Courses |
+|-------|------|------------|--------------|
+| faculty@calricula.com | Faculty | Mathematics | MATH 101 (Approved), MATH 201 (Committee), MATH 202 (Draft) |
+| faculty2@calricula.com | Faculty | English | ENGL 101 (Approved), ENGL 102 (Dept Review) |
+| faculty3@calricula.com | Faculty | CS | CS 101 (Approved), CS 201 (Articulation), CS 301 (Draft) |
+| chair@calricula.com | Curriculum Chair | — | Reviews DeptReview & Committee courses |
+| articulation@calricula.com | Articulation Officer | — | Reviews ArticulationReview courses |
+| admin@calricula.com | Admin | — | Full system access |
+| demo@calricula.com | Faculty | General | PSYCH, BIOL, ART, BUS, NURS, HIST, CHEM courses |
+
+### Dev Mode Authentication
+
+The app supports a dev auth bypass for local development without Firebase:
+
+- **Frontend**: Set `NEXT_PUBLIC_AUTH_DEV_MODE=true` in `.env`
+- **Backend**: Set `AUTH_DEV_MODE=true` in `.env`
+- Dev tokens: `dev-faculty-001`, `dev-chair-001`, `dev-articulation-001`, `dev-admin-001`, `dev-demo-001`
+
+Files involved:
+- `frontend/src/contexts/AuthContext.tsx` - DEV_USERS map
+- `backend/app/core/firebase.py` - dev_user_map for token verification
+- `backend/seeds/seed_users.py` - User seed data
+
 ## Directory Structure
 
 ```

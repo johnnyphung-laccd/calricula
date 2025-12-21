@@ -62,28 +62,42 @@ const DEV_USERS: Record<string, UserProfile> = {
     role: 'Faculty',
     department_name: 'General',
   },
-  'faculty@lamc.edu': {
+  'faculty@calricula.com': {
     id: 'dev-faculty-001',
-    email: 'faculty@lamc.edu',
+    email: 'faculty@calricula.com',
     full_name: 'Dr. Maria Garcia',
     role: 'Faculty',
     department_name: 'Mathematics',
   },
-  'chair@lamc.edu': {
+  'faculty2@calricula.com': {
+    id: 'dev-faculty-002',
+    email: 'faculty2@calricula.com',
+    full_name: 'Prof. James Chen',
+    role: 'Faculty',
+    department_name: 'English',
+  },
+  'faculty3@calricula.com': {
+    id: 'dev-faculty-003',
+    email: 'faculty3@calricula.com',
+    full_name: 'Dr. Sarah Johnson',
+    role: 'Faculty',
+    department_name: 'Computer Science',
+  },
+  'chair@calricula.com': {
     id: 'dev-chair-001',
-    email: 'chair@lamc.edu',
+    email: 'chair@calricula.com',
     full_name: 'Dr. Robert Williams',
     role: 'CurriculumChair',
   },
-  'articulation@lamc.edu': {
+  'articulation@calricula.com': {
     id: 'dev-articulation-001',
-    email: 'articulation@lamc.edu',
+    email: 'articulation@calricula.com',
     full_name: 'Ms. Lisa Thompson',
     role: 'ArticulationOfficer',
   },
-  'admin@lamc.edu': {
+  'admin@calricula.com': {
     id: 'dev-admin-001',
-    email: 'admin@lamc.edu',
+    email: 'admin@calricula.com',
     full_name: 'Mr. David Martinez',
     role: 'Admin',
   },
@@ -297,7 +311,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           }
           return;
         }
-        throw new Error('Invalid email or password. Dev users: demo@calricula.com, faculty@lamc.edu, chair@lamc.edu, admin@lamc.edu');
+        throw new Error('Invalid email or password. Dev users: demo@calricula.com, faculty@calricula.com, chair@calricula.com, admin@calricula.com');
       }
 
       const credential = await signIn(email, password);

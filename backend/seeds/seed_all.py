@@ -69,12 +69,12 @@ def seed_all():
         print("=" * 60)
         print()
         print("Test Users (password: Test123!):")
-        print("  faculty@lamc.edu      - Faculty")
-        print("  faculty2@lamc.edu     - Faculty")
-        print("  faculty3@lamc.edu     - Faculty")
-        print("  chair@lamc.edu        - Curriculum Chair")
-        print("  articulation@lamc.edu - Articulation Officer")
-        print("  admin@lamc.edu        - Admin")
+        print("  faculty@calricula.com      - Faculty")
+        print("  faculty2@calricula.com     - Faculty")
+        print("  faculty3@calricula.com     - Faculty")
+        print("  chair@calricula.com        - Curriculum Chair")
+        print("  articulation@calricula.com - Articulation Officer")
+        print("  admin@calricula.com        - Admin")
         print()
 
     except Exception as e:

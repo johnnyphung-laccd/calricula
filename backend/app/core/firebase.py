@@ -65,10 +65,12 @@ def verify_firebase_token(id_token: str) -> dict:
     # Map dev mode tokens to test user firebase_uids from seed data
     dev_user_map = {
         "dev-demo-001": {"uid": "test_faculty_001", "email": "demo@calricula.com"},
-        "dev-faculty-001": {"uid": "test_faculty_001", "email": "faculty@lamc.edu"},
-        "dev-chair-001": {"uid": "test_chair_001", "email": "chair@lamc.edu"},
-        "dev-articulation-001": {"uid": "test_articulation_001", "email": "articulation@lamc.edu"},
-        "dev-admin-001": {"uid": "test_admin_001", "email": "admin@lamc.edu"},
+        "dev-faculty-001": {"uid": "test_faculty_001", "email": "faculty@calricula.com"},
+        "dev-faculty-002": {"uid": "test_faculty_002", "email": "faculty2@calricula.com"},
+        "dev-faculty-003": {"uid": "test_faculty_003", "email": "faculty3@calricula.com"},
+        "dev-chair-001": {"uid": "test_chair_001", "email": "chair@calricula.com"},
+        "dev-articulation-001": {"uid": "test_articulation_001", "email": "articulation@calricula.com"},
+        "dev-admin-001": {"uid": "test_admin_001", "email": "admin@calricula.com"},
     }
 
     # Check for dev mode tokens FIRST (before Firebase verification)
@@ -99,7 +101,7 @@ def verify_firebase_token(id_token: str) -> dict:
         # Default fallback for any dev token
         return {
             "uid": "test_faculty_001",
-            "email": "faculty@lamc.edu",
+            "email": "faculty@calricula.com",
             "name": "Development User",
             "email_verified": True,
         }

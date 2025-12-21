@@ -17,8 +17,8 @@ HEADERS = {"Authorization": "Bearer dev-admin-001"}
 print("Creating test notification in database...")
 with Session(engine) as session:
     # Get admin user
-    admin = session.exec(select(User).where(User.email == "admin@lamc.edu")).first()
-    faculty = session.exec(select(User).where(User.email == "faculty@lamc.edu")).first()
+    admin = session.exec(select(User).where(User.email == "admin@calricula.com")).first()
+    faculty = session.exec(select(User).where(User.email == "faculty@calricula.com")).first()
 
     if admin and faculty:
         # Create test notification

@@ -23,28 +23,28 @@ import { test, expect, Page } from '@playwright/test';
 
 const TEST_USERS = {
   faculty: {
-    email: 'faculty@lamc.edu',
+    email: 'faculty@calricula.com',
     password: 'Test123!',
     role: 'Faculty',
-    name: 'Dr. Sarah Chen',
+    name: 'Dr. Maria Garcia',
   },
   chair: {
-    email: 'chair@lamc.edu',
+    email: 'chair@calricula.com',
     password: 'Test123!',
     role: 'CurriculumChair',
     name: 'Dr. Robert Williams',
   },
   articulation: {
-    email: 'articulation@lamc.edu',
+    email: 'articulation@calricula.com',
     password: 'Test123!',
     role: 'ArticulationOfficer',
     name: 'Ms. Lisa Thompson',
   },
   admin: {
-    email: 'admin@lamc.edu',
+    email: 'admin@calricula.com',
     password: 'Test123!',
     role: 'Admin',
-    name: 'Mr. Admin User',
+    name: 'Mr. David Martinez',
   },
 };
 

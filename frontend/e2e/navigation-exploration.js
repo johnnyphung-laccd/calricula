@@ -28,7 +28,7 @@ const { chromium } = require('@playwright/test');
     await page.waitForLoadState('networkidle', { timeout: 60000 });
 
     await page.waitForSelector('input[type="email"]', { timeout: 10000 });
-    await page.fill('input[type="email"]', 'faculty@lamc.edu');
+    await page.fill('input[type="email"]', 'faculty@calricula.com');
     await page.fill('input[type="password"]', 'Test123!');
     await page.click('button[type="submit"]');
 

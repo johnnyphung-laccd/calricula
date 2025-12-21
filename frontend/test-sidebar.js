@@ -30,7 +30,7 @@ const fs = require('fs');
     // Set localStorage flag for dev auth bypass
     await page.evaluate(() => {
       localStorage.setItem('DEV_AUTH_BYPASS', 'true');
-      localStorage.setItem('dev_user_email', 'faculty@lamc.edu');
+      localStorage.setItem('dev_user_email', 'faculty@calricula.com');
     });
     console.log('   Dev auth bypass enabled in localStorage');
 

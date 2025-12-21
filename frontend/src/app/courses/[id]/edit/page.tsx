@@ -943,7 +943,7 @@ function ReviewSectionWrapper({ course, onSubmitForReview }: ReviewSectionWrappe
 export default function CourseEditorPage() {
   const params = useParams();
   const router = useRouter();
-  const { getToken } = useAuth();
+  const { user, getToken } = useAuth();
   const toast = useToast();
   const courseId = params.id as string;
 
@@ -959,6 +959,7 @@ export default function CourseEditorPage() {
   const [documentPanelOpen, setDocumentPanelOpen] = useState(false);
   const [saveStatus, setSaveStatus] = useState<SaveStatus>('idle');
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   // Section labels for comments
   const SECTION_LABELS: Record<string, string> = {
@@ -999,6 +1000,27 @@ export default function CourseEditorPage() {
       fetchCourse();
     }
   }, [courseId, getToken]);
+
+  // Permission check: Redirect non-owners to view page
+  // Only Admin or course creator can edit. Reviewers should use the view page
+  // where they can approve or return with comments (compliant workflow).
+  useEffect(() => {
+    if (!course || !user || isRedirecting) return;
+
+    const isAdmin = user.role === 'Admin';
+    const isOwner = course.created_by === user.id;
+
+    if (!isAdmin && !isOwner) {
+      // Set flag to prevent multiple redirects
+      setIsRedirecting(true);
+      // Redirect to view page where reviewer actions are available
+      toast.info(
+        'View Only',
+        'Reviewers can approve or return courses with comments from the course view page.'
+      );
+      router.replace(`/courses/${courseId}`);
+    }
+  }, [course, user, courseId, router, toast, isRedirecting]);
 
   // Cleanup save timeout on unmount
   useEffect(() => {

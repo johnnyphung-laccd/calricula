@@ -9,17 +9,17 @@ import { test as base, Page } from '@playwright/test';
 // Test user credentials (for dev mode or test environment)
 export const TEST_USERS = {
   faculty: {
-    email: 'faculty@lamc.edu',
+    email: 'faculty@calricula.com',
     password: 'Test123!',
     role: 'Faculty',
   },
   chair: {
-    email: 'chair@lamc.edu',
+    email: 'chair@calricula.com',
     password: 'Test123!',
     role: 'CurriculumChair',
   },
   admin: {
-    email: 'admin@lamc.edu',
+    email: 'admin@calricula.com',
     password: 'Test123!',
     role: 'Admin',
   },

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // Test user credentials (for dev mode or test environment)
 const TEST_USERS = {
   faculty: {
-    email: 'faculty@lamc.edu',
+    email: 'faculty@calricula.com',
     password: 'Test123!',
     role: 'Faculty',
   },

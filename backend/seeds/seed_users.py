@@ -20,42 +20,42 @@ from app.models.department import Department
 # must be created separately via Firebase Console
 SEED_USERS = [
     {
-        "email": "faculty@lamc.edu",
+        "email": "faculty@calricula.com",
         "full_name": "Dr. Maria Garcia",
         "role": UserRole.FACULTY,
         "department_code": "MATH",
         "firebase_uid": "test_faculty_001",
     },
     {
-        "email": "faculty2@lamc.edu",
+        "email": "faculty2@calricula.com",
         "full_name": "Prof. James Chen",
         "role": UserRole.FACULTY,
         "department_code": "ENGL",
         "firebase_uid": "test_faculty_002",
     },
     {
-        "email": "faculty3@lamc.edu",
+        "email": "faculty3@calricula.com",
         "full_name": "Dr. Sarah Johnson",
         "role": UserRole.FACULTY,
         "department_code": "CS",
         "firebase_uid": "test_faculty_003",
     },
     {
-        "email": "chair@lamc.edu",
+        "email": "chair@calricula.com",
         "full_name": "Dr. Robert Williams",
         "role": UserRole.CURRICULUM_CHAIR,
         "department_code": None,
         "firebase_uid": "test_chair_001",
     },
     {
-        "email": "articulation@lamc.edu",
+        "email": "articulation@calricula.com",
         "full_name": "Ms. Lisa Thompson",
         "role": UserRole.ARTICULATION_OFFICER,
         "department_code": None,
         "firebase_uid": "test_articulation_001",
     },
     {
-        "email": "admin@lamc.edu",
+        "email": "admin@calricula.com",
         "full_name": "Mr. David Martinez",
         "role": UserRole.ADMIN,
         "department_code": None,

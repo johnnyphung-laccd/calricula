@@ -73,10 +73,10 @@ All test users use password: `Test123!`
 
 | Email | Role | Permissions |
 |-------|------|-------------|
-| faculty@lamc.edu | Faculty | Create/edit own courses |
-| chair@lamc.edu | Curriculum Chair | Review queue, approve courses |
-| articulation@lamc.edu | Articulation Officer | C-ID alignment, transfer review |
-| admin@lamc.edu | Admin | Full system access |
+| faculty@calricula.com | Faculty | Create/edit own courses |
+| chair@calricula.com | Curriculum Chair | Review queue, approve courses |
+| articulation@calricula.com | Articulation Officer | C-ID alignment, transfer review |
+| admin@calricula.com | Admin | Full system access |
 
 ---
 
