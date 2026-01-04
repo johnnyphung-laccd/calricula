@@ -1008,7 +1008,8 @@ export default function CourseEditorPage() {
     if (!course || !user || isRedirecting) return;
 
     const isAdmin = user.role === 'Admin';
-    const isOwner = course.created_by === user.id;
+    // Compare by email since dev mode uses different IDs than the database
+    const isOwner = course.creator_email === user.email;
 
     if (!isAdmin && !isOwner) {
       // Set flag to prevent multiple redirects

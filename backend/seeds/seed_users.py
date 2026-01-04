@@ -61,6 +61,13 @@ SEED_USERS = [
         "department_code": None,
         "firebase_uid": "test_admin_001",
     },
+    {
+        "email": "demo@calricula.com",
+        "full_name": "Demo User",
+        "role": UserRole.FACULTY,
+        "department_code": None,  # General faculty, no specific department
+        "firebase_uid": "test_demo_001",
+    },
 ]
 
 

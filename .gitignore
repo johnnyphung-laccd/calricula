@@ -6,13 +6,21 @@
 # Environment and Secrets
 # ===========================================
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
+!.env.*.example
 *.pem
 serviceAccountKey.json
+serviceAccountkey.json
+serviceaccount.json
 firebase-credentials.json
+*-service-account.json
+
+# ===========================================
+# Demo Mode
+# ===========================================
+demo_db_backup.sql
+demo_last_reset.txt
 
 # ===========================================
 # Python / Backend
@@ -103,6 +111,6 @@ coverage/
 *.db
 
 # ===========================================
-# Linear Project State (keep for agent handoff)
+# Linear Project State
 # ===========================================
-# Note: .linear_project.json IS tracked for agent session continuity
+.linear_project.json

@@ -64,7 +64,7 @@ def verify_firebase_token(id_token: str) -> dict:
     """
     # Map dev mode tokens to test user firebase_uids from seed data
     dev_user_map = {
-        "dev-demo-001": {"uid": "test_faculty_001", "email": "demo@calricula.com"},
+        "dev-demo-001": {"uid": "test_demo_001", "email": "demo@calricula.com"},
         "dev-faculty-001": {"uid": "test_faculty_001", "email": "faculty@calricula.com"},
         "dev-faculty-002": {"uid": "test_faculty_002", "email": "faculty2@calricula.com"},
         "dev-faculty-003": {"uid": "test_faculty_003", "email": "faculty3@calricula.com"},
@@ -72,6 +72,35 @@ def verify_firebase_token(id_token: str) -> dict:
         "dev-articulation-001": {"uid": "test_articulation_001", "email": "articulation@calricula.com"},
         "dev-admin-001": {"uid": "test_admin_001", "email": "admin@calricula.com"},
     }
+
+    # Check for demo mode - allows any Firebase token for demo users
+    # Demo mode is a simplified auth mode for public demonstrations
+    if settings.DEMO_MODE:
+        # In demo mode, we accept Firebase tokens and only check if the email contains "demo"
+        try:
+            if _firebase_app is None:
+                initialize_firebase()
+
+            if _firebase_app is not None:
+                decoded_token = auth.verify_id_token(id_token)
+                email = decoded_token.get("email", "").lower()
+
+                # Only allow users with "demo" in their email for demo mode
+                if "demo" in email:
+                    print(f"[DEMO MODE] Access granted to demo user: {email}")
+                    return decoded_token
+                else:
+                    print(f"[DEMO MODE] Access denied for non-demo user: {email}")
+                    raise HTTPException(
+                        status_code=status.HTTP_403_FORBIDDEN,
+                        detail="Demo mode only allows access to users with 'demo' in their email address",
+                    )
+        except Exception as e:
+            print(f"[DEMO MODE] Auth error: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Demo mode authentication failed",
+            )
 
     # Check for dev mode tokens FIRST (before Firebase verification)
     # This allows dev bypass even when Firebase is configured

@@ -45,6 +45,13 @@ const isDevBypassEnabled = (): boolean => {
   return authDevMode;
 };
 
+// Demo mode detection helper
+// Enable demo mode if NEXT_PUBLIC_DEMO_MODE is set to 'true'
+// Demo mode allows public access with limited features and daily resets
+const isDemoModeEnabled = (): boolean => {
+  return process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+};
+
 // Auto-enable dev mode flag (set by timeout when Firebase hangs)
 let autoDevModeEnabled = false;
 
@@ -117,6 +124,8 @@ interface AuthContextType {
   isAuthenticated: boolean;
   // Is Firebase configured?
   isConfigured: boolean;
+  // Is demo mode enabled?
+  isDemoMode: boolean;
   // Auth methods
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -135,6 +144,7 @@ const defaultContext: AuthContextType = {
   error: null,
   isAuthenticated: false,
   isConfigured: false,
+  isDemoMode: false,
   login: async () => {},
   logout: async () => {},
   getToken: async () => null,
@@ -367,6 +377,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   // Check if any dev mode is active (manual or auto from timeout)
   const devModeActive = isDevBypassEnabled() || isAutoDevModeEnabled();
+  const demoModeActive = isDemoModeEnabled();
 
   const value: AuthContextType = {
     firebaseUser,
@@ -377,6 +388,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // In dev bypass mode, only check for user; otherwise require both firebaseUser and user
     isAuthenticated: devModeActive ? !!user : (!!firebaseUser && !!user),
     isConfigured: devModeActive || isConfigured,
+    isDemoMode: demoModeActive,
     login,
     logout,
     getToken,

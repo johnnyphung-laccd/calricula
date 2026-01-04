@@ -48,6 +48,9 @@ class Settings(BaseSettings):
     # Development/Testing
     AUTH_DEV_MODE: bool = False  # Enable dev auth bypass (for automated testing)
 
+    # Demo Mode
+    DEMO_MODE: bool = False  # Enable demo mode (public demo with daily resets)
+
     # Google AI
     GOOGLE_API_KEY: Optional[str] = None
     GEMINI_FILE_SEARCH_STORE_NAME: str = "calricula-knowledge-base"

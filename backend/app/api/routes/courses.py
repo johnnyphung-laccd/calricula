@@ -224,6 +224,7 @@ class CourseDetailResponse(BaseModel):
     lmi_narrative: Optional[str] = None
     lmi_retrieved_at: Optional[datetime] = None
     created_by: uuid.UUID
+    creator_email: Optional[str] = None  # For ownership checks in frontend
     created_at: datetime
     updated_at: datetime
     approved_at: Optional[datetime]
@@ -561,6 +562,13 @@ async def get_course(
         (int(course.outside_of_class_hours) * 18)   # Outside-of-class hours × 18 weeks
     )
 
+    # Look up creator email for ownership checks in frontend
+    creator_email = None
+    if course.created_by:
+        creator = session.get(User, course.created_by)
+        if creator:
+            creator_email = creator.email
+
     return CourseDetailResponse(
         id=course.id,
         subject_code=course.subject_code,
@@ -592,6 +600,7 @@ async def get_course(
         lmi_narrative=course.lmi_narrative,
         lmi_retrieved_at=course.lmi_retrieved_at,
         created_by=course.created_by,
+        creator_email=creator_email,
         created_at=course.created_at,
         updated_at=course.updated_at,
         approved_at=course.approved_at,
@@ -748,6 +757,7 @@ async def create_course(
         transferability=course.transferability,
         ge_applicability=course.ge_applicability,
         created_by=course.created_by,
+        creator_email=current_user.email,  # Current user is the creator
         created_at=course.created_at,
         updated_at=course.updated_at,
         approved_at=course.approved_at,

@@ -18,6 +18,7 @@ from seeds.seed_top_codes import seed_top_codes
 from seeds.seed_ccn_standards import seed_ccn_standards
 from seeds.seed_courses import seed_courses
 from seeds.seed_programs import seed_programs
+from seeds.seed_demo_data import seed_demo_data
 
 
 def seed_all():
@@ -64,14 +65,21 @@ def seed_all():
         print("   Done: Programs seeded")
         print()
 
+        # 7. Demo data (depends on: users, departments, courses)
+        print("7. Seeding demo user data...")
+        seed_demo_data()
+        print("   Done: Demo data seeded")
+        print()
+
         print("=" * 60)
         print("  Seeding Complete!")
         print("=" * 60)
         print()
         print("Test Users (password: Test123!):")
-        print("  faculty@calricula.com      - Faculty")
-        print("  faculty2@calricula.com     - Faculty")
-        print("  faculty3@calricula.com     - Faculty")
+        print("  demo@calricula.com         - Demo User (7 courses, notifications)")
+        print("  faculty@calricula.com      - Faculty (MATH dept)")
+        print("  faculty2@calricula.com     - Faculty (ENGL dept)")
+        print("  faculty3@calricula.com     - Faculty (CS dept)")
         print("  chair@calricula.com        - Curriculum Chair")
         print("  articulation@calricula.com - Articulation Officer")
         print("  admin@calricula.com        - Admin")

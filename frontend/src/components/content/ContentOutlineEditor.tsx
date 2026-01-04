@@ -522,9 +522,9 @@ export function ContentOutlineEditor({
   // Generate unique ID
   const generateId = () => `content-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  // Calculate totals
+  // Calculate totals (ensure hours_allocated is parsed as number since API may return strings from Decimal)
   const totalAllocatedHours = useMemo(
-    () => contentItems.reduce((sum, item) => sum + (item.hours_allocated || 0), 0),
+    () => contentItems.reduce((sum, item) => sum + (parseFloat(String(item.hours_allocated)) || 0), 0),
     [contentItems]
   );
 
@@ -610,7 +610,7 @@ export function ContentOutlineEditor({
   );
 
   const completedTopics = contentItems.filter(
-    (item) => item.topic.trim().length > 0 && item.hours_allocated > 0
+    (item) => item.topic.trim().length > 0 && parseFloat(String(item.hours_allocated)) > 0
   ).length;
 
   return (

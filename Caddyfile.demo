@@ -1,0 +1,31 @@
+{$DEMO_DOMAIN:demo.calricula.com} {
+    # Health check endpoint for Docker
+    handle /caddy-health {
+        respond "OK" 200
+    }
+
+    # Backend API proxy
+    handle /api/* {
+        reverse_proxy backend:8000 {
+            # Timeouts for long-running AI requests
+            transport http {
+                dial_timeout 30s
+                response_header_timeout 120s
+            }
+        }
+    }
+
+    # Frontend proxy
+    handle /* {
+        reverse_proxy frontend:3000
+    }
+
+    # Encode responses (gzip)
+    encode gzip
+
+    # Log all requests
+    log {
+        output file /var/log/caddy/demo_access.log
+        format json
+    }
+}

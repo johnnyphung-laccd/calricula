@@ -13,10 +13,10 @@ export default function HomePage() {
     <div className="min-h-screen luminous-gradient">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
           <div className="text-center">
             {/* Logo */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-4">
               <div className="flex items-center gap-3">
                 <AcademicCapIcon className="h-12 w-12 text-white" />
                 <span className="text-4xl font-bold text-white">Calricula</span>
@@ -27,14 +27,14 @@ export default function HomePage() {
             <h1 className="text-5xl font-extrabold text-white mb-6">
               Intelligent Curriculum Management
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               AI-assisted Course Outline of Record (COR) creation with embedded
               California Community College compliance. Transform your curriculum
               development workflow.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex justify-center gap-4">
+            {/* CTA Button */}
+            <div className="flex justify-center">
               <Link
                 href="/login"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
@@ -44,14 +44,6 @@ export default function HomePage() {
                 Get Started
                 <ArrowRightIcon className="h-5 w-5" />
               </Link>
-              <a
-                href="#features"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
-                         border-2 border-white/30 text-white font-semibold text-lg
-                         hover:bg-white/10 transition-colors"
-              >
-                Learn More
-              </a>
             </div>
           </div>
         </div>
@@ -73,10 +65,10 @@ export default function HomePage() {
       </div>
 
       {/* Features Section */}
-      <section id="features" className="bg-slate-50 py-24">
+      <section id="features" className="bg-slate-50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl font-bold text-slate-900 mb-2">
               Powerful Features for Curriculum Development
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -85,10 +77,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Feature 1 */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-4">
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-3">
                 <SparklesIcon className="h-6 w-6 text-luminous-600" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">
@@ -101,8 +93,8 @@ export default function HomePage() {
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-4">
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-3">
                 <DocumentTextIcon className="h-6 w-6 text-luminous-600" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">
@@ -115,8 +107,8 @@ export default function HomePage() {
             </div>
 
             {/* Feature 3 */}
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-4">
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-luminous-100 mb-3">
                 <AcademicCapIcon className="h-6 w-6 text-luminous-600" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">
@@ -132,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
+      <footer className="bg-slate-900 text-white py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
