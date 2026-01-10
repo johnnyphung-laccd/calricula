@@ -1,7 +1,7 @@
 # Calricula - Intelligent Curriculum Management System
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/johnnyphung-laccd/calricula)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](LICENSE)
 
 An AI-assisted curriculum management platform that enables faculty to create, modify, and route Course Outlines of Record (CORs) and Programs through approval workflows.
 
@@ -528,6 +528,22 @@ BLS_API_KEY=your-api-key-here
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **BSD 3-Clause License** with additional branding requirements.
 
-**Note:** The "Calricula" name is protected. See [TRADEMARK.md](TRADEMARK.md) for usage guidelines.
+### Quick Summary
+
+| You CAN | You CANNOT (without exemption) |
+|---------|-------------------------------|
+| Use for any purpose | Remove "Calricula" branding from UI |
+| Modify the code | Rename to "Calricula" variants |
+| Distribute copies | Claim official endorsement |
+| Use commercially | Co-brand with equal prominence |
+
+### Branding Exemptions
+
+You may modify branding if ANY of these apply:
+- **Small deployment**: ≤50 users in any 30-day period
+- **Contributor**: 1+ year of consistent contributions + written permission
+- **Enterprise**: Commercial license agreement
+
+See [LICENSE](LICENSE) for full terms.
