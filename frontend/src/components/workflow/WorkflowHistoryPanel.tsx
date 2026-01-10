@@ -152,7 +152,7 @@ function TimelineItem({
       {/* Connecting line */}
       {!isLast && (
         <span
-          className="absolute left-4 top-8 -ml-px h-full w-0.5 bg-gray-200"
+          className="absolute left-4 top-8 -ml-px h-full w-0.5 bg-slate-200 dark:bg-slate-700"
           aria-hidden="true"
         />
       )}
@@ -161,7 +161,7 @@ function TimelineItem({
         {/* Icon */}
         <div className="relative">
           <div
-            className={`flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white ${
+            className={`flex h-8 w-8 items-center justify-center rounded-full ring-4 ring-white dark:ring-slate-800 ${
               isApproval
                 ? 'bg-green-500'
                 : isReturn
@@ -182,20 +182,20 @@ function TimelineItem({
         {/* Content */}
         <div className="min-w-0 flex-1">
           {/* Header */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
               <StatusBadge status={item.from_status} />
-              <ArrowRightIcon className="h-4 w-4 text-gray-400" />
+              <ArrowRightIcon className="h-4 w-4 text-slate-400 dark:text-slate-500" />
               <StatusBadge status={item.to_status} />
-            </div>
-            <div className="text-xs text-gray-500" title={formatDate(item.created_at)}>
-              {formatRelativeTime(item.created_at)}
+              <span className="text-xs text-slate-500 dark:text-slate-400" title={formatDate(item.created_at)}>
+                {formatRelativeTime(item.created_at)}
+              </span>
             </div>
           </div>
 
           {/* User info */}
-          <div className="mt-2 flex items-center space-x-2 text-sm text-gray-600">
-            <UserCircleIcon className="h-4 w-4 text-gray-400" />
+          <div className="mt-2 flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-300">
+            <UserCircleIcon className="h-4 w-4 text-slate-400 dark:text-slate-500" />
             <span className="font-medium">
               {item.user?.full_name || 'Unknown User'}
             </span>
@@ -204,16 +204,16 @@ function TimelineItem({
 
           {/* Comment */}
           {item.comment && (
-            <div className="mt-2 rounded-lg bg-gray-50 p-3 text-sm text-gray-700">
+            <div className="mt-2 rounded-lg bg-slate-50 dark:bg-slate-800 p-3 text-sm text-slate-700 dark:text-slate-300">
               <div className="flex items-start space-x-2">
-                <ChatBubbleLeftIcon className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0" />
+                <ChatBubbleLeftIcon className="h-4 w-4 text-slate-400 dark:text-slate-500 mt-0.5 flex-shrink-0" />
                 <p className="whitespace-pre-wrap">{item.comment}</p>
               </div>
             </div>
           )}
 
           {/* Timestamp */}
-          <div className="mt-1 flex items-center text-xs text-gray-400">
+          <div className="mt-1 flex items-center text-xs text-slate-400 dark:text-slate-500">
             <ClockIcon className="h-3 w-3 mr-1" />
             {formatDate(item.created_at)}
           </div>
@@ -230,9 +230,9 @@ function TimelineItem({
 function EmptyState({ entityType }: { entityType: string }) {
   return (
     <div className="text-center py-12">
-      <ClockIcon className="mx-auto h-12 w-12 text-gray-300" />
-      <h3 className="mt-2 text-sm font-semibold text-gray-900">No history yet</h3>
-      <p className="mt-1 text-sm text-gray-500">
+      <ClockIcon className="mx-auto h-12 w-12 text-slate-300 dark:text-slate-600" />
+      <h3 className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">No history yet</h3>
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         Workflow history will appear here as the {entityType.toLowerCase()} moves through the approval process.
       </p>
     </div>
@@ -248,10 +248,10 @@ function LoadingState() {
     <div className="space-y-6 animate-pulse">
       {[1, 2, 3].map((i) => (
         <div key={i} className="flex items-start space-x-3">
-          <div className="h-8 w-8 rounded-full bg-gray-200" />
+          <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700" />
           <div className="flex-1 space-y-2">
-            <div className="h-4 bg-gray-200 rounded w-3/4" />
-            <div className="h-3 bg-gray-200 rounded w-1/2" />
+            <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-3/4" />
+            <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-1/2" />
           </div>
         </div>
       ))}
@@ -298,29 +298,26 @@ export function WorkflowHistoryPanel({
   }, [entityType, entityId, getToken]);
 
   return (
-    <div className={`bg-white rounded-lg shadow-sm border border-gray-200 ${className}`}>
+    <div className={`luminous-card ${className}`}>
       {/* Header */}
-      <div className="px-4 py-3 border-b border-gray-200">
-        <div className="flex items-center space-x-2">
-          <ClockIcon className="h-5 w-5 text-gray-500" />
-          <h3 className="text-lg font-semibold text-gray-900">Workflow History</h3>
-        </div>
-        <p className="mt-1 text-sm text-gray-500">
-          Timeline of status changes and approval actions
-        </p>
+      <div className="flex items-center gap-2 mb-4">
+        <ClockIcon className="w-5 h-5 text-luminous-500" />
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+          Workflow History
+        </h3>
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div>
         {loading ? (
           <LoadingState />
         ) : error ? (
           <div className="text-center py-8">
             <XCircleIcon className="mx-auto h-12 w-12 text-red-400" />
-            <p className="mt-2 text-sm text-red-600">{error}</p>
+            <p className="mt-2 text-sm text-red-600 dark:text-red-400">{error}</p>
             <button
               onClick={() => window.location.reload()}
-              className="mt-4 text-sm font-medium text-luminous-600 hover:text-luminous-500"
+              className="mt-4 text-sm font-medium text-luminous-600 dark:text-luminous-400 hover:text-luminous-500"
             >
               Try again
             </button>
@@ -346,8 +343,8 @@ export function WorkflowHistoryPanel({
 
       {/* Footer with count */}
       {!loading && history.length > 0 && (
-        <div className="px-4 py-3 border-t border-gray-200 bg-gray-50 rounded-b-lg">
-          <p className="text-xs text-gray-500">
+        <div className="pt-4 mt-4 border-t border-slate-200 dark:border-slate-700">
+          <p className="text-xs text-slate-500 dark:text-slate-400">
             {history.length} status {history.length === 1 ? 'change' : 'changes'} recorded
           </p>
         </div>

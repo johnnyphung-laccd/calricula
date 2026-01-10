@@ -30,6 +30,7 @@ services:
       - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID}
       - FIREBASE_SERVICE_ACCOUNT_PATH=/app/serviceAccountKey.json
       - AUTH_DEV_MODE=${AUTH_DEV_MODE:-false}
+      - BLS_API_KEY=${BLS_API_KEY}
     volumes:
       - ./backend:/app
       - ./serviceAccountKey.json:/app/serviceAccountKey.json:ro

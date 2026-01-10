@@ -20,6 +20,7 @@ import {
   UserCircleIcon,
   BookOpenIcon,
   BriefcaseIcon,
+  ChartBarIcon,
 } from '@heroicons/react/24/outline';
 import { NotificationBell } from '@/components/notifications';
 import { ThemeToggle } from '@/components/theme';
@@ -30,6 +31,7 @@ import {
   CheckCircleIcon as CheckCircleIconSolid,
   BookOpenIcon as BookOpenIconSolid,
   BriefcaseIcon as BriefcaseIconSolid,
+  ChartBarIcon as ChartBarIconSolid,
 } from '@heroicons/react/24/solid';
 import { useAuth, UserProfile } from '@/contexts/AuthContext';
 import { api } from '@/lib/api';
@@ -85,6 +87,12 @@ const navigation: NavItem[] = [
     href: '/lmi-data',
     icon: BriefcaseIcon,
     iconActive: BriefcaseIconSolid,
+  },
+  {
+    name: 'BLS Data',
+    href: '/bls-data',
+    icon: ChartBarIcon,
+    iconActive: ChartBarIconSolid,
   },
   {
     name: 'Approvals',

@@ -168,7 +168,7 @@ async def health_check_pool():
 # API Routes
 # =============================================================================
 
-from app.api.routes import auth, courses, departments, approvals, programs, ai, export, reference, compliance, workflow, elumen, documents, notifications, cross_listings, lmi, dashboard
+from app.api.routes import auth, courses, departments, approvals, programs, ai, export, reference, compliance, workflow, elumen, documents, notifications, cross_listings, lmi, dashboard, bls, qcew
 
 # Authentication routes
 app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
@@ -214,6 +214,12 @@ app.include_router(cross_listings.router, prefix="/api/courses", tags=["Cross-Li
 
 # LMI routes
 app.include_router(lmi.router, prefix="/api/lmi", tags=["Labor Market Information"])
+
+# BLS routes (U.S. Bureau of Labor Statistics)
+app.include_router(bls.router, prefix="/api/bls", tags=["BLS Data"])
+
+# QCEW routes (Quarterly Census of Employment and Wages)
+app.include_router(qcew.router, prefix="/api/qcew", tags=["QCEW County Data"])
 
 # Dashboard routes
 app.include_router(dashboard.router, prefix="/api/dashboard", tags=["Dashboard"])

@@ -114,7 +114,7 @@ function VersionItem({ version, isCurrentVersion, onCompare }: VersionItemProps)
           {/* Version Number & Status */}
           <div className="flex items-center gap-2 mb-1">
             <span className="font-semibold text-slate-900 dark:text-white">
-              Version {version.title ? `${version.title.slice(-1)}` : '1'}
+              {version.title || 'Version 1'}
             </span>
             <StatusBadge status={version.status} />
           </div>

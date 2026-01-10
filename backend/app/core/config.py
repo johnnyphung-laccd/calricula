@@ -55,6 +55,9 @@ class Settings(BaseSettings):
     GOOGLE_API_KEY: Optional[str] = None
     GEMINI_FILE_SEARCH_STORE_NAME: str = "calricula-knowledge-base"
 
+    # BLS API (U.S. Bureau of Labor Statistics)
+    BLS_API_KEY: Optional[str] = None
+
     class Config:
         env_file = "../.env"  # Look in project root
         extra = "ignore"  # Ignore extra env vars
