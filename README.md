@@ -13,6 +13,7 @@ An AI-assisted curriculum management platform that enables faculty to create, mo
 - **SLO Editor**: Bloom's Taxonomy verb picker with cognitive level distribution visualization
 - **Approval Workflows**: Role-based review process (Faculty → Department → Committee → Articulation → Approved)
 - **Program Management**: Degree and certificate program builder with 60-unit limit validation
+- **Labor Market Data**: BLS integration with occupational wages, employment projections, and county employment data
 - **Dark Mode Support**: Full light/dark theme with system preference detection
 
 ## Tech Stack
@@ -466,6 +467,52 @@ Key API endpoints:
 | `GET /api/programs` | List programs |
 | `POST /api/ai/suggest/*` | AI suggestions |
 | `GET /api/compliance/audit/{id}` | Compliance audit |
+| `GET /api/bls/oes` | Occupational wage data |
+| `GET /api/bls/projections/{soc}` | Employment projections |
+| `GET /api/qcew/summary/{area}` | County employment data |
+
+---
+
+## BLS Labor Market Data
+
+The `/bls-data` page provides labor market intelligence from the U.S. Bureau of Labor Statistics to help faculty align curriculum with workforce needs.
+
+### Features
+
+| Tab | Data Source | Description |
+|-----|-------------|-------------|
+| **Occupational Wages** | OES Survey | Searchable wage data for ~450 SOC occupations with percentile breakdowns |
+| **Career Outlook** | Employment Projections | 10-year growth forecasts, annual openings, education requirements |
+| **Local Employment** | QCEW | County-level employment and wages by industry (LA, Orange, San Diego, etc.) |
+| **Unemployment** | LAUS | Unemployment rates for California metros and national |
+| **CPI** | Consumer Price Index | Inflation data for cost-of-living context |
+
+### Example Queries
+
+```bash
+# Get wage data for Registered Nurses
+curl "http://localhost:8001/api/bls/oes?occupation=291141&areas=national,california,los_angeles"
+
+# Get 10-year projection with education requirements
+curl "http://localhost:8001/api/bls/projections/291141"
+
+# Get LA County employment by industry
+curl "http://localhost:8001/api/qcew/summary/los_angeles"
+
+# Search occupations
+curl "http://localhost:8001/api/bls/occupations/search?q=nurse&limit=10"
+```
+
+### Optional: BLS API Key
+
+The BLS API works without a key (limited to 25 requests/day). For higher limits, get a free key:
+
+1. Register at [BLS Public Data API](https://www.bls.gov/developers/home.htm)
+2. Add to `.env`:
+
+```env
+BLS_API_KEY=your-api-key-here
+```
 
 ---
 
