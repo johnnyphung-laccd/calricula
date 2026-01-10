@@ -1,6 +1,7 @@
 # Calricula - Intelligent Curriculum Management System
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/johnnyphung-laccd/calricula)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An AI-assisted curriculum management platform that enables faculty to create, modify, and route Course Outlines of Record (CORs) and Programs through approval workflows.
 
@@ -527,4 +528,6 @@ BLS_API_KEY=your-api-key-here
 
 ## License
 
-Copyright (c) 2024. All rights reserved.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Note:** The "Calricula" name is protected. See [TRADEMARK.md](TRADEMARK.md) for usage guidelines.
