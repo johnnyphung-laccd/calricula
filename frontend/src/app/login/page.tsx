@@ -92,7 +92,7 @@ export default function LoginPage() {
           </h1>
           <p className="text-lg text-white/80">
             AI-assisted Course Outline of Record creation with embedded
-            California Community College compliance.
+            compliance standards.
           </p>
 
           {/* Features Preview */}

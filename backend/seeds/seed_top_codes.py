@@ -1,6 +1,6 @@
 """
 Calricula - TOP Code Seed Data
-Seeds official Taxonomy of Programs (TOP) codes from California Community Colleges.
+Seeds official Taxonomy of Programs (TOP) codes from community colleges.
 """
 
 import sys
@@ -15,7 +15,7 @@ from app.core.database import engine
 from app.models.reference import TOPCode
 
 
-# Official TOP codes from California Community Colleges
+# Official TOP codes from community colleges
 SEED_TOP_CODES = [
     {
         "code": "1701.00",

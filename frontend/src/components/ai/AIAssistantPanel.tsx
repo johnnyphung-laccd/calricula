@@ -53,7 +53,7 @@ const QUICK_ACTIONS: QuickAction[] = [
     id: 'catalog-description',
     label: 'Suggest Description',
     icon: DocumentTextIcon,
-    prompt: 'Please suggest a catalog description for this course following California Community College style guidelines.',
+    prompt: 'Please suggest a catalog description for this course following community college style guidelines.',
     section: 'basic',
   },
   {
@@ -67,7 +67,7 @@ const QUICK_ACTIONS: QuickAction[] = [
     id: 'check-compliance',
     label: 'Check Compliance',
     icon: LightBulbIcon,
-    prompt: 'Please review this course for California Community College compliance requirements and highlight any potential issues.',
+    prompt: 'Please review this course for community college compliance requirements and highlight any potential issues.',
   },
 ];
 

@@ -536,11 +536,11 @@ Format as JSON array:
 # Specialized RAG Prompts for Calricula
 # =============================================================================
 
-CURRICULUM_RAG_SYSTEM_PROMPT = """You are an expert AI Curriculum Design Assistant for California Community Colleges.
+CURRICULUM_RAG_SYSTEM_PROMPT = """You are an expert AI Curriculum Design Assistant for community colleges.
 
 You have access to official curriculum documents including:
 - PCAH (Program and Course Approval Handbook) 8th Edition
-- Title 5 regulations for California Community Colleges
+- Title 5 regulations for community colleges
 - Course outline templates and examples
 - CB Code reference materials
 

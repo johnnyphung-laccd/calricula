@@ -22,7 +22,7 @@ from app.services.file_search_service import FileSearchService
 KNOWLEDGE_BASE_PATH = "../../calricula_docs/knowledge-base"
 
 # Documents to pre-load into RAG
-# These are California Community College regulatory documents that the AI uses
+# These are community college regulatory documents that the AI uses
 # to provide accurate compliance guidance
 DOCUMENTS_TO_PRELOAD = [
     {

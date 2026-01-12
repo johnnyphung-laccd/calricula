@@ -2,7 +2,7 @@
 Tests for CCN Seed Data Validation against AB 1111 Requirements.
 
 Validates that the seeded CCN standards data meets AB 1111 (Common Course
-Numbering) requirements for California Community Colleges.
+Numbering) requirements for community colleges.
 
 Tests cover:
 - C-ID format validation (SUBJ C####&&)

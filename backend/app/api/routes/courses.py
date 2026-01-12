@@ -2621,7 +2621,7 @@ async def submit_course_for_review(
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail=f"Cannot submit CTE course: LMI data is {age_months} months old and exceeds the 24-month limit. "
-                       f"Per California Community Colleges Technical Manual, LMI data must be less than 2 years old. "
+                       f"Per community colleges Technical Manual, LMI data must be less than 2 years old. "
                        f"Please refresh the LMI data before submitting."
             )
         elif validity_status == "warning":

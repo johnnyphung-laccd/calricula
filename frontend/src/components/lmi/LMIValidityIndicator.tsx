@@ -62,7 +62,7 @@ const ICON_WRAPPER = {
  * LMI Validity Indicator Component
  *
  * Displays the validity status of LMI data based on its age.
- * Per California Community Colleges Technical Manual:
+ * Per Technical Manual:
  * - Green (Valid): 0-18 months old
  * - Yellow (Warning): 18-24 months old
  * - Red (Invalid): >24 months old

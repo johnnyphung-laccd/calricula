@@ -1159,7 +1159,7 @@ async def generate_lmi_narrative(
         tone = narrative_request.tone or "formal"
         tone_instruction = tone_guidance.get(tone, tone_guidance["formal"])
 
-        prompt = f"""You are an expert in labor market analysis and California Community College curriculum documentation.
+        prompt = f"""You are an expert in labor market analysis and community college curriculum documentation.
 
 Generate a labor market information narrative for the following occupation and course:
 

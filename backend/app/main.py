@@ -55,7 +55,7 @@ app = FastAPI(
     Calricula API - Intelligent Curriculum Management System
 
     AI-assisted Course Outline of Record (COR) creation with embedded
-    California Community College compliance (PCAH, Title 5).
+    community college compliance (PCAH, Title 5).
 
     ## Features
 

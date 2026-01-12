@@ -3,7 +3,7 @@
 // ===========================================
 // CB Code Wizard Component
 // ===========================================
-// Step-by-step wizard for configuring California Community College
+// Step-by-step wizard for configuring community college
 // compliance codes (CB01-CB27) using diagnostic questions instead
 // of raw dropdowns.
 //
@@ -962,7 +962,7 @@ export function CBCodeWizard({
               CB Codes Configuration
             </h2>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Configure California Community College compliance codes for state reporting.
+              Configure community college compliance codes for state reporting.
             </p>
             {/* CCN Status Badge */}
             {adoptedCCN && (

@@ -1,7 +1,7 @@
 """
 CCN (Common Course Numbering) Utilities
 
-Provides utilities for working with California Community College
+Provides utilities for working with community college
 Common Course Numbering (CCN/C-ID) standards per AB 1111.
 
 CCN Format: SUBJ C####&&
@@ -23,7 +23,7 @@ from dataclasses import dataclass
 
 
 # Discipline to TOP Code mapping
-# TOP codes are from the California Community Colleges Taxonomy of Programs
+# TOP codes are from the Taxonomy of Programs
 DISCIPLINE_TOP_CODES: Dict[str, str] = {
     # Mathematics & Statistics
     "MATH": "1701.00",  # Mathematics, General

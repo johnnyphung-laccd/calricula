@@ -332,7 +332,7 @@ function BasicInfoSection({ course, onChange, onBlur }: BasicInfoSectionProps) {
     setDescriptionSuggestion(null);
     try {
       const response = await api.chatWithAI(
-        `Please suggest a catalog description for this course following California Community College style guidelines. The course is ${course.subject_code} ${course.course_number}: ${course.title}. It is ${course.units} units with ${course.lecture_hours} lecture hours and ${course.lab_hours} lab hours per week.`,
+        `Please suggest a catalog description for this course following community college style guidelines. The course is ${course.subject_code} ${course.course_number}: ${course.title}. It is ${course.units} units with ${course.lecture_hours} lecture hours and ${course.lab_hours} lab hours per week.`,
         [],
         {
           course_code: `${course.subject_code} ${course.course_number}`,

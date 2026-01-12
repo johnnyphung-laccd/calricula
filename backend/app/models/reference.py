@@ -66,7 +66,7 @@ class TOPCode(TOPCodeBase, table=True):
     """
     Taxonomy of Programs (TOP) code model.
 
-    Official California Community College program classification codes.
+    Official community college program classification codes.
     Used for CB03 state reporting.
     """
     __tablename__ = "top_codes"

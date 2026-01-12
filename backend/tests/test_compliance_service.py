@@ -1,7 +1,7 @@
 """
 Unit tests for the Compliance Service
 
-Tests California Community College compliance rules including:
+Tests community college compliance rules including:
 - Title 5 § 55002.5 (54-hour rule for unit calculation)
 - CB Code dependencies
 - SLO requirements

@@ -1,7 +1,7 @@
 /**
  * LMI Data Validation Utilities
  *
- * Per California Community Colleges Technical Manual:
+ * Per Technical Manual:
  * LMI data must be less than 2 years old for CTE program submission
  */
 

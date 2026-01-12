@@ -759,7 +759,7 @@ export function CBCodeSummary({
             CB Codes Summary
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-            California Community College compliance codes for state MIS reporting
+            Community college compliance codes for state MIS reporting
           </p>
         </div>
 

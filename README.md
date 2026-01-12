@@ -8,9 +8,9 @@ An AI-assisted curriculum management platform that enables faculty to create, mo
 ## Features
 
 - **AI-Assisted Authoring**: Google Gemini 2.5 Flash integration for intelligent suggestions
-- **Compliance Enforcement**: California Community College regulations (PCAH 8th Edition, Title 5) embedded in the interface
+- **Compliance Enforcement**: Community college regulations (PCAH 8th Edition, Title 5) embedded in the interface
 - **54-Hour Rule Validation**: Automatic unit calculation and Title 5 § 55002.5 compliance
-- **CB Code Wizard**: Natural language questions that translate to 27 California compliance codes
+- **CB Code Wizard**: Natural language questions that translate to 27 compliance codes
 - **SLO Editor**: Bloom's Taxonomy verb picker with cognitive level distribution visualization
 - **Approval Workflows**: Role-based review process (Faculty → Department → Committee → Articulation → Approved)
 - **Program Management**: Degree and certificate program builder with 60-unit limit validation

@@ -2,7 +2,7 @@
 Compliance API Routes
 
 Provides endpoints for compliance checking and auditing Course Outlines of Record
-against California Community College regulations (Title 5, PCAH).
+against community college regulations (Title 5, PCAH).
 """
 
 import uuid
@@ -391,7 +391,7 @@ async def audit_course(
     **Compliance Categories:**
     - Title 5: California Code of Regulations requirements
     - PCAH: Program and Course Approval Handbook requirements
-    - CB Codes: California Community College state reporting codes
+    - CB Codes: community college state reporting codes
     - Units & Hours: 54-hour rule and related validations
     - Student Learning Outcomes: SLO requirements and quality checks
     - Course Content: Content outline requirements
@@ -1214,11 +1214,11 @@ async def recommend_cb_codes(
     Get CB code recommendations based on course data.
 
     This endpoint analyzes course characteristics and recommends appropriate
-    CB (Course Basic) codes for California Community College state reporting.
+    CB (Course Basic) codes for community college state reporting.
 
     **CB Codes Overview:**
     CB codes are 27+ standardized codes required for MIS (Management Information System)
-    reporting to the California Community Colleges Chancellor's Office.
+    reporting to the community colleges Chancellor's Office.
 
     **Key CB Codes Handled:**
     - **CB03**: TOP Code (Taxonomy of Programs) - classification code
@@ -2570,7 +2570,7 @@ def _get_category_description(category: ComplianceCategory) -> str:
     descriptions = {
         ComplianceCategory.TITLE_5: "California Code of Regulations - Education",
         ComplianceCategory.PCAH: "Program and Course Approval Handbook (8th Edition)",
-        ComplianceCategory.CB_CODES: "California Community College state reporting codes",
+        ComplianceCategory.CB_CODES: "community college state reporting codes",
         ComplianceCategory.UNITS_HOURS: "Unit calculation and hours requirements",
         ComplianceCategory.SLO: "Student Learning Outcome requirements",
         ComplianceCategory.CONTENT: "Course content outline requirements",

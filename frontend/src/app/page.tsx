@@ -29,7 +29,7 @@ export default function HomePage() {
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
               AI-assisted Course Outline of Record (COR) creation with embedded
-              California Community College compliance. Transform your curriculum
+              compliance standards. Transform your curriculum
               development workflow.
             </p>
 

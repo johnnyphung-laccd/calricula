@@ -2,7 +2,7 @@
 Compliance Service
 
 Provides comprehensive compliance checking for Course Outlines of Record (COR)
-against California Community College regulations including:
+against community college regulations including:
 - Title 5 (California Code of Regulations)
 - PCAH 8th Edition (Program and Course Approval Handbook)
 - CB Code requirements and dependencies
@@ -61,7 +61,7 @@ class ComplianceAuditResponse(BaseModel):
 
 class ComplianceService:
     """
-    Compliance checking service for California Community College CORs.
+    Compliance checking service for community college CORs.
 
     Implements rules from:
     - Title 5 § 55002 (Standards and Criteria for Courses)

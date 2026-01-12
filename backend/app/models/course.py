@@ -97,7 +97,7 @@ class Course(CourseBase, table=True):
     Course Outline of Record (COR) model.
 
     The central model for curriculum management, containing all course
-    information required for California Community College compliance.
+    information required for community college compliance.
     """
     __tablename__ = "courses"
 

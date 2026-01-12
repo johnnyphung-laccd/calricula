@@ -17,12 +17,12 @@ logger = logging.getLogger(__name__)
 
 # System prompt for curriculum assistant
 CURRICULUM_ASSISTANT_SYSTEM_PROMPT = """
-You are an expert AI Curriculum Design Assistant for California Community Colleges.
+You are an expert AI Curriculum Design Assistant for community colleges.
 Your role is to help faculty create high-quality, compliant Course Outlines of Record (CORs)
 and academic programs.
 
 ## Your Expertise
-- California Community College curriculum regulations (Title 5, PCAH)
+- community college curriculum regulations (Title 5, PCAH)
 - Course Outline of Record (COR) development
 - Student Learning Outcomes (SLOs) using Bloom's Taxonomy
 - CB Code requirements for state reporting
@@ -305,7 +305,7 @@ Provide ONLY the numbered SLOs, no additional explanation."""
             Dict with explanation and suggested fix
         """
         prompts = {
-            "unit_calculation": f"""Explain the California Community College 54-hour rule for unit calculation.
+            "unit_calculation": f"""Explain the community college 54-hour rule for unit calculation.
 
 Current values:
 - Units: {context.get('units', 'N/A')}
@@ -373,7 +373,7 @@ Explain why this verb is problematic for SLOs and suggest 3 alternative stronger
             "contact_hours": contact_hours
         }
 
-        prompt = f"""Generate a course content outline for this California Community College course:
+        prompt = f"""Generate a course content outline for this community college course:
 
 Course: {subject_code} - {course_title}
 Total Contact Hours: {contact_hours} hours (to be distributed across all topics)
@@ -452,7 +452,7 @@ Provide ONLY the JSON array, no additional explanation or markdown code blocks."
         }
 
         # Build the prompt
-        prompt = f"""You are an expert at classifying California Community College courses according to the
+        prompt = f"""You are an expert at classifying community college courses according to the
 Taxonomy of Programs (TOP) coding system. TOP codes are used for state MIS reporting (CB03) and
 determine whether a course is vocational or non-vocational.
 
@@ -532,7 +532,7 @@ KEY RULES:
             for course in courses[:15]:  # Limit to avoid token overflow
                 course_list += f"- {course.get('subject_code', '')} {course.get('course_number', '')}: {course.get('title', '')} ({course.get('units', 0)} units)\n"
 
-        prompt = f"""Generate a comprehensive program narrative for submission to the California Community Colleges Chancellor's Office.
+        prompt = f"""Generate a comprehensive program narrative for submission to the community colleges Chancellor's Office.
 
 ## Program Information
 - **Title:** {program_title}
