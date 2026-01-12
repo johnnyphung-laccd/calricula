@@ -423,7 +423,7 @@ FRONTEND_PORT=3002 BACKEND_PORT=8002 docker-compose up
 ## Project Structure
 
 ```
-calricula-app/
+calricula/
 ├── backend/                 # Python FastAPI backend
 │   ├── app/
 │   │   ├── api/            # API routes
